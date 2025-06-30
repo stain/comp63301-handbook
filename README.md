@@ -14,9 +14,7 @@ hugo server
 
 ©️ 2025 The University of Manchester, UK,  licensed under  Creative Commons Attribution-ShareAlike 4.0 International (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>).
 
-Based on the Hugo theme <a href="https://mcshelby.github.io/hugo-theme-relearn/"><hugo-theme-relearn</a>, distributed under the [MIT License](https://github.com/McShelby/hugo-theme-relearn/blob/7.6.1/LICENSE).
+Based on the Hugo theme  [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn/), distributed under the [MIT License](https://github.com/McShelby/hugo-theme-relearn/blob/7.6.1/LICENSE).
 
-### Authors & contributors
-
-* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
+See full list of [contributors](CONTRIBUTING.md).
 
