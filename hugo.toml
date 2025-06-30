@@ -1,0 +1,9 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-GB'
+title = 'COMP63301'
+theme = 'hugo-theme-relearn'
+
+[params]
+  themeVariant = 'manchester'
+
+

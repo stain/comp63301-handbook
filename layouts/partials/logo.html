@@ -1,0 +1,5 @@
+<a id="R-logo" href="{{ partial "permalink.gotmpl" (dict "to" .Site.Home) }}">
+  {{ $logo := resources.Get "/images/manchester-faded.svg" }}
+  <img src="{{ $logo.RelPermalink }}" alt="brand logo">
+    {{ .Site.Title }}
+</a>
