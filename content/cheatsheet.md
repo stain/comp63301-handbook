@@ -61,6 +61,8 @@ graph LR;
   If --> Then
   Then --> Else
 ```
+https://mermaid.js.org/syntax/flowchart.html
+
 
 <!-- attachments -->
 {{% resources style="primary" expanded="false" /%}}

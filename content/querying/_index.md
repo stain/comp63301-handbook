@@ -7,4 +7,26 @@ weight = 7
   menuPre = '<i class="fa-solid fa-magnifying-glass"></i> '
 +++
 
-This is a new chapter.
+
+```mermaid {align="center" zoom="true"}
+graph LR;
+  classDef highlight stroke:#000,stroke-width:4px
+  direction LR
+  Generation
+  subgraph S [ ]
+    Ingestion
+    Transformation
+    Serving:::highlight
+    Ingestion --> Transformation
+    Transformation --> Serving
+    Storage@{ shape: lin-cyl }
+  end
+  Generation --> Ingestion
+  Serving --> Analytics:::highlight
+  Serving --> ML(Machine Learning)
+  Serving --> RETL(Reverse ETL)
+```
+
+
+
+In this chapter we'll consider 
