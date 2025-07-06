@@ -1,7 +1,7 @@
 +++
 title = "Shape of Data"
 type = "chapter"
-weight = 20
+weight = 2
 
 [params]
   menuPre = '<i class="fa-solid fa-table"></i> '

@@ -1,7 +1,7 @@
 +++
 title = "Data Integration"
 type = "chapter"
-weight = 40
+weight = 4
 
 [params]
   menuPre = '<i class="fa-solid fa-code-fork"></i> '

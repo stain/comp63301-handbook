@@ -1,7 +1,7 @@
 +++
 title = "Data Visualisation and Serving"
 type = "chapter"
-weight = 90
+weight = 9
 
 [params]
   menuPre = '<i class="fa-solid fa-chart-simple"></i> '

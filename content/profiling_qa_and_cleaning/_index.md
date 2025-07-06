@@ -1,7 +1,7 @@
 +++
 title = "Data Profiling, quality and cleaning"
 type = "chapter"
-weight = 50
+weight = 5
 
 [params]
   menuPre = '<i class="fa-solid fa-list-check"></i> '

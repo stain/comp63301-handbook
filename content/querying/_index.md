@@ -1,7 +1,7 @@
 +++
 title = "Data Querying"
 type = "chapter"
-weight = 70
+weight = 7
 
 [params]
   menuPre = '<i class="fa-solid fa-magnifying-glass"></i> '

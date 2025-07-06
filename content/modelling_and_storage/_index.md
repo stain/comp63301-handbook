@@ -1,7 +1,7 @@
 +++
 title = "Data Modelling and Storage"
 type = "chapter"
-weight = 30
+weight = 3
 
 [params]
   menuPre = '<i class="fa-solid fa-database"></i> '
