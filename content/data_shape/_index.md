@@ -1,7 +1,7 @@
 +++
-title = "Log"
+title = "Shape of Data"
 type = "chapter"
-weight = 1
+weight = 20
 +++
 
 This is a new chapter.
