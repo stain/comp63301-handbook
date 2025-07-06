@@ -9,3 +9,5 @@ weight = 3
 
 <h2>Considering Traditional and Non-Traditional Data Types</h2>
 
+{{% children sort="weight" %}}
+

@@ -1,6 +1,6 @@
 # COMP63301 handbook
 
-You can edit this handbook within the [content](content) folder using [Markdown](https://www.markdownguide.org/tools/hugo/) syntax (Goldmark CommonMark dialect).
+You can edit this handbook within the [content](content) folder using [Markdown](https://mcshelby.github.io/hugo-theme-relearn/authoring/markdown/) syntax (Goldmark CommonMark dialect).
 
 See the [Relearn authoring guide](https://mcshelby.github.io/hugo-theme-relearn/authoring/index.html) for further information, and [create content](https://mcshelby.github.io/hugo-theme-relearn/introduction/quickstart/index.html#create-content) on how to add new pages and chapters.
 
