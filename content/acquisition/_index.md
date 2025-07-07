@@ -7,7 +7,7 @@ weight = 1
   menuPre = '<i class="fa-solid fa-download"></i> '
 +++
 
-In our first quest of data engineering, we will consider the task of acquiring data into our local environment before it can be further processed. 
+In our first quest of data engineering, we will consider the task of **acquiring data** into our local environment, before it can be further processed. 
 
 ```mermaid {align="center" zoom="true"}
 graph LR;
@@ -44,6 +44,4 @@ graph LR;
     style Undercurrents fill:#eee,stroke:#000
   end
 ```
-
-https://www.data.gov.uk/dataset/81cbf1a0-6304-470c-ade8-60272be0d219/sites-of-biological-importance-sbi-in-greater-manchester
 
