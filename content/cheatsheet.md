@@ -94,3 +94,25 @@ printf"Hello World!");
     - home.php | fa-fw fab fa-php | #888cc4
 {{% /tree %}}
 
+> [!note]- Challenge
+> > [!accent] 
+> > Write a ...
+>
+> > [!INFO]- Solution
+> > ```sql
+> > SELECT ...
+> > ```
+
+
+> [!primary] Objectives
+> - Understand..
+
+> [!secondary] Questions
+> - What is...
+
+
+> [!TIP] Keypoints
+> - Foo is...
+
+
+

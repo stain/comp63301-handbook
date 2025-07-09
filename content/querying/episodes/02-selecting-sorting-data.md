@@ -105,10 +105,10 @@ FROM articles
 ORDER BY ISSNs DESC, First_Author ASC;
 ```
 
-> [!NOTE]- Challenge
-> ## Challenge
-> Write a query that returns `Title`, `First_Author`, `ISSNs` and `Citation_Count` from
-> the articles table, ordered by the top cited article and alphabetically by title.
+> [!note]- Challenge
+> > [!accent] 
+> > Write a query that returns `Title`, `First_Author`, `ISSNs` and `Citation_Count` from
+> > the articles table, ordered by the top cited article and alphabetically by title.
 >
 > > [!INFO]- Solution
 > > ```sql
