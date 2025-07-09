@@ -20,5 +20,5 @@ Extracts modified to Jupyter notebook use by Stian Soiland-Reyes <https://orcid.
 
 ## Sections
 
-{{% children sort="weight" %}}
+{{% children sort="weight" containerstyle="ol" %}}
 

@@ -45,4 +45,4 @@ graph LR;
   end
 ```
 
-Data will come from a multitude of sources, 
+Data will come from a multitude of sources, covered by textbook chapter 5. Here we will discuss Chapter 7 on **Data Ingestion**.

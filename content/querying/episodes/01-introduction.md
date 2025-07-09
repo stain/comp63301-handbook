@@ -3,21 +3,18 @@ title: Introduction to SQL
 weight: 1
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+> [!primary] Objectives
+> - Define a relational database.
+> - Explain what SQL is and why to use it.
+> - Identify library and information skills that relate to using SQL
 
-- Define a relational database.
-- Explain what SQL is and why to use it.
-- Identify library and information skills that relate to using SQL
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!secondary] Questions
+> 
+> - What is SQL?
+> - Why is it significant?
+> - What is the relationship between a relational database and SQL?
 
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- What is SQL?
-- Why is it significant?
-- What is the relationship between a relational database and SQL?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## What is SQL?
 
@@ -54,43 +51,6 @@ such as R or Python.
 
 Many web applications (including WordPress and e-commerce sites like Amazon) run on a SQL (relational) database. Understanding SQL is the first step in eventually building custom web applications that can serve data to users.
 
-## Why are people working in library- and information-related roles well suited to SQL?
-
-Library work is about information management. As library workers, we help sort and organise
-information, and we help people find information. Most of us go through mediated queries
-to help people find the information they need, e.g., we assist with or conduct a search via
-a library catalogue. With SQL, you can directly construct your database queries
-without the constraints (e.g., field name or search limitations) imposed by
-a mediated search interface. Library workers are good at searching information – constructing queries using SQL is a different and more
-direct way of finding information.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## What are some of the uses for SQL in libraries?
-
-- You can use SQL to make macro or large scale changes to metadata records in library databases, for instance, updating journal names so that they are consistent or normalised throughout the database.
-
-- For situations where you have to interact with database administrators in your library or wider organisation, you can learn the fundamentals of SQL to become more fluent in the terminology.
-
-- Because SQL querying is similar to natural language queries, you can use it to organise a variety of projects (e.g. programme evaluation) and ask questions of the data before going on to use other data analysis tools.
-
-- You can use SQL to query your library database and explore new views that are not necessarily provided via library systems patron facing interfaces.
-
-- SQL can be used to keep an inventory of items, for instance, for a library's makerspace, or it can be used to track licences for journals.
-
-- For projects involving migrating and cleaning data from one system to another, SQL can be a handy tool.
-
-- With spreadsheets of data scattered throughout folders, SQL can be a useful tool for connecting this data and bringing it together in a database or central data warehouse where it can be accessible to different roles in the library and queried in one place.
-
-- It can also help with initial exposure with interacting with a system, in preparation for interacting with a application programming interface or API later on.
-
-In addition, you can read about these two perspectives:
-
-- [An Introduction to SQL for Librarians](https://ruthtillman.com/an-introduction-to-sql-for-librarians/)
-
-- [Data Science is Different Now: Learn SQL](https://vickiboykis.com/2019/02/13/data-science-is-different-now/)
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Database Management Systems
 
@@ -99,6 +59,7 @@ relational data. We're going to use SQLite today, but basically everything we
 teach you will apply to the other database systems as well (e.g., MySQL,
 PostgreSQL, MS Access, Filemaker Pro). The only things that will differ are the
 details of exactly how to import and export data and possibly some differences in datatype.
+
 
 ## Introduction to DB Browser for SQLite
 
@@ -174,11 +135,10 @@ Different database software/platforms have different names and sometimes differe
 | date or datetime       | depending on the platform, may represent the date and time or the number of days since a specified date.  This field often has a specified format, e.g., YYYY-MM-DD                                                                                                             | doesn't exist - need to use built-in date and time functions and store dates in real, integer, or text formats.  See [Section 2.2 of SQLite documentation](https://www.sqlite.org/datatype3.html#date_and_time_datatype) for more details. | 
 | blob                   | a Binary Large OBject can store a large amount of data, documents, audio or video files.                                                                                                                                                                                        | BLOB                                                                                                                  | 
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- SQL is a powerful language used to interrogate and manipulate relational databases.
-- People working in library- and information-related roles have skills that allow them to use SQL to organize and access data.
+> [!TIP] Keypoints
+> - SQL is a powerful language used to interrogate and manipulate relational databases.
+> - People working in library- and information-related roles have skills that allow them to use SQL to organize and access data.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

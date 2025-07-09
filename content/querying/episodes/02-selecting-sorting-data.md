@@ -3,21 +3,16 @@ title: Selecting and sorting data
 weight: 2
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+> [!primary] Objectives
+> - Understand how SQL can be used to query databases
+> - Understand how to build queries, using SQL keywords such as `DISTINCT` and `ORDER BY`
 
-- Understand how SQL can be used to query databases
-- Understand how to build queries, using SQL keywords such as `DISTINCT` and `ORDER BY`
+> [!secondary] Questions
+> - What is a query?
+> - How do you query databases using SQL?
+> - How do you retrieve unique values in SQL?
+> - How do you sort results in SQL?
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- What is a query?
-- How do you query databases using SQL?
-- How do you retrieve unique values in SQL?
-- How do you sort results in SQL?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## What is a query?
 
@@ -110,32 +105,22 @@ FROM articles
 ORDER BY ISSNs DESC, First_Author ASC;
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+> [!NOTE]- Challenge
+> ## Challenge
+> Write a query that returns `Title`, `First_Author`, `ISSNs` and `Citation_Count` from
+> the articles table, ordered by the top cited article and alphabetically by title.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > SELECT Title, First_Author, ISSNs, Citation_Count
+> > FROM articles
+> > ORDER BY Citation_Count DESC, Title ASC;
+> > ```
 
-## Challenge
 
-Write a query that returns `Title`, `First_Author`, `ISSNs` and `Citation_Count` from
-the articles table, ordered by the top cited article and alphabetically by title.
+> [!TIP] Keypoints
+> - SQL is ideal for querying databases
+> - SQL queries have a basic query structure starting with `SELECT` field FROM table with additional keywords and criteria that can be used.
 
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT Title, First_Author, ISSNs, Citation_Count
-FROM articles
-ORDER BY Citation_Count DESC, Title ASC;
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- SQL is ideal for querying databases
-- SQL queries have a basic query structure starting with `SELECT` field FROM table with additional keywords and criteria that can be used.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
