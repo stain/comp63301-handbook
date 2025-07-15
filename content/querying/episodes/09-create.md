@@ -3,18 +3,15 @@ title: Creating tables and modifying data
 weight: 9
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Write statements that create tables.
-- Write statements to insert, modify, and delete records.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!primary] Objectives
+> - Write statements that create tables.
+> - Write statements to insert, modify, and delete records.
 
-:::::::::::::::::::::::::::::::::::::::: questions
+> [!secondary] Questions
+> - How can I create, modify, and delete tables and data?
 
-- How can I create, modify, and delete tables and data?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 So far we have only looked at how to get information out of a database,
 both because that is more frequent than adding information,
@@ -23,7 +20,7 @@ once queries are understood.
 If we want to create and modify data,
 we need to know two other sets of commands.
 
-The first pair are [`CREATE TABLE`][create-table] and [`DROP TABLE`][drop-table].
+The first pair are [`CREATE TABLE`][https://www.sqlite.org/lang_createtable.html] and [`DROP TABLE`][https://www.sqlite.org/lang_droptable.html].
 While they are written as two words,
 they are actually single commands.
 The first one creates a new table;
@@ -127,78 +124,57 @@ That's never supposed to happen:
 Our queries assume there will be a row `ISSNs` in the table 'journals'
 matching every row `ISSNs`in the table `articles`.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Exercise
 
-Write an SQL statement to add the journal "New Journal of Physics" (ISSNs \& ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table
-`journals`. You need to add the publisher "IOP" to the table `publishers` as well.
+> [!note]- Challenge
+> > [!accent] 
+> > Write an SQL statement to add the journal "New Journal of Physics" (ISSNs \& ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table `journals`. You need to add the publisher "IOP" to the table `publishers` as well.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > INSERT INTO "publishers"
+> > VALUES (7,'Institute of Physics (IOP)');
+> > INSERT INTO "journals"
+> > VALUES (52,'1367-2630','1367-2630',7,'New Journal of Physics');
+> > ```
 
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-INSERT INTO "publishers"
-VALUES (7,'Institute of Physics (IOP)');
-INSERT INTO "journals"
-VALUES (52,'1367-2630','1367-2630',7,'New Journal of Physics');
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Backing Up with SQL
 
-SQLite has several administrative commands that aren't part of the
-SQL standard.  One of them is `.dump`, which prints the SQL commands
-needed to re-create the database.  Another is `.read`, which reads a
-file created by `.dump` and restores the database.  A colleague of
-yours thinks that storing dump files (which are text) in version
-control is a good way to track and manage changes to the database.
-What are the pros and cons of this approach?  (Hint: records aren't
-stored in any particular order.)
 
-:::::::::::::::  solution
+> [!note]- Challenge
+> > [!accent] 
+> > SQLite has several administrative commands that aren't part of the
+> SQL standard.  One of them is `.dump`, which prints the SQL commands
+> needed to re-create the database.  Another is `.read`, which reads a
+> file created by `.dump` and restores the database.  A colleague of
+> yours thinks that storing dump files (which are text) in version
+> control is a good way to track and manage changes to the database.
+> What are the pros and cons of this approach?  
+> (Hint: records aren't stored in any particular order.)
+>
+> > [!INFO]- Solution
+> > ### Advantages
+> > - A version control system will be able to show differences between versions of the dump file; something it can't do for binary files like databases
+> > - A VCS only saves changes between versions, rather than a complete copy of each version (save disk space)
+> > - The version control log will explain the reason for the changes in each version  of the database
+> > 
+> > ### Disadvantages
+> > 
+> > - Artificial differences between commits because records don't have a fixed order
+> > 
+> >  _Adapted from the Software Carpentry Course "Databases and SQL", Chapter 9. [Creating and Modifying Data](https://swcarpentry.github.io/sql-novice-survey/09-create)._ 
 
-## Solution
+> [!TIP] Keypoints 
 
-### Advantages
+> - Use CREATE and DROP to create and delete tables.
+> - Use INSERT to add data.
+> - Use UPDATE to modify existing data.
+> - Use DELETE to remove data.
+> - It is simpler and safer to modify data when every record has a unique primary key.
+> - Do not create dangling references by deleting records that other records refer to.
 
-- A version control system will be able to show differences between versions
-  of the dump file; something it can't do for binary files like databases
-- A VCS only saves changes between versions, rather than a complete copy of
-  each version (save disk space)
-- The version control log will explain the reason for the changes in each version
-  of the database
 
-### Disadvantages
-
-- Artificial differences between commits because records don't have a fixed order
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Adapted from the Software Carpentry Course "Databases and SQL", Chapter 9. 'Creating and Modifying Data'.
-<https://swcarpentry.github.io/sql-novice-survey/09-create>
-
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- Use CREATE and DROP to create and delete tables.
-- Use INSERT to add data.
-- Use UPDATE to modify existing data.
-- Use DELETE to remove data.
-- It is simpler and safer to modify data when every record has a unique primary key.
-- Do not create dangling references by deleting records that other records refer to.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-[create-table]: https://www.sqlite.org/lang_createtable.html
-[drop-table]: https://www.sqlite.org/lang_droptable.html
 
 
 

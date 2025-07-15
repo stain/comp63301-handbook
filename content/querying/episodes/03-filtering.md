@@ -3,19 +3,16 @@ title: Filtering
 weight: 3
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+> [!primary] Objectives
+> - Write queries that `SELECT` data based on conditions, such as `AND`, `OR`, and `NOT`.
+> - Understand how to use the `WHERE` clause in a statement.
+> - Learn how to use comparison keywords such as `LIKE` in a statement.
 
-- Write queries that `SELECT` data based on conditions, such as `AND`, `OR`, and `NOT`.
-- Understand how to use the `WHERE` clause in a statement.
-- Learn how to use comparison keywords such as `LIKE` in a statement.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!secondary] Questions
+> - How can I filter data?
 
-:::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I filter data?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Filtering
 
@@ -62,35 +59,27 @@ Let's see what variations of the term we got. Notice uppercase and lowercase, th
 
 To learn more about other comparison keywords you can use, see Beginner SQL Tutorial on [SQL Comparison Keywords](https://beginner-sql-tutorial.com/sql-like-in-operators.htm).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+> [!note]- Challenge
+> > [!accent] 
+> >  Write a query that returns the `Title`, `First_Author`, `Subjects`, `ISSNs`, `Month` and `Year` for all papers where `Subjects` contains "computer" and that have more than 8 citations.
+>
+> > [!INFO]- Solution
+> > 
+> > ```sql
+> > SELECT Title, First_Author, Subjects, ISSNs, Month, Year
+> > FROM articles
+> > WHERE (Subjects LIKE '%computer%') AND (Citation_Count > 8);
+> > ```
 
-## Challenge
 
-Write a query that returns the `Title`, `First_Author`, `Subjects`, `ISSNs`, `Month` and `Year`
-for all papers where `Subjects` contains "computer" and that have more than 8 citations.
-
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT Title, First_Author, Subjects, ISSNs, Month, Year
-FROM articles
-WHERE (Subjects LIKE '%computer%') AND (Citation_Count > 8);
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 You can continue to add or chain conditions together and write more advanced queries.
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `WHERE` to filter and retrieve data based on specific conditions.
-- Use `AND, OR, and NOT` to add additional conditions.
-- Use the comparison keyword `LIKE` and wildcard characters such as `%` to match patterns.
+> [!TIP] Keypoints
+> - Use `WHERE` to filter and retrieve data based on specific conditions.
+> - Use `AND, OR, and NOT` to add additional conditions.
+> - Use the comparison keyword `LIKE` and wildcard characters such as `%` to match patterns.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

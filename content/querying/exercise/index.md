@@ -1,5 +1,5 @@
 +++
-title = "Exercise: SQL query"
+title = "Exercise: querying data"
 weight = 4
 +++
 

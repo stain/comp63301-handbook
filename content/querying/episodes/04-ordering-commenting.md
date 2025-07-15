@@ -3,18 +3,15 @@ title: Ordering and commenting
 weight: 4
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand how to build queries, and the order in which to build the parts.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!primary] Objectives
+> - Understand how to build queries, and the order in which to build the parts.
 
-:::::::::::::::::::::::::::::::::::::::: questions
+> [!secondary] Questions
+> - What is the order of execution in SQL queries?
+> - How can you organize and comment more complex SQL queries?
 
-- What is the order of execution in SQL queries?
-- How can you organize and comment more complex SQL queries?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Order of execution
 
@@ -31,15 +28,12 @@ What is interesting to note about this query is that we don't necessarily have t
 
 We can do this because sorting occurs earlier in the computational pipeline than field selection.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+> [!INFO] The computer is basically doing this:
+> 
+> 1. Filtering rows according to WHERE
+> 2. Sorting results according to ORDER BY
+> 3. Displaying requested columns or expressions.
 
-## The computer is basically doing this:
-
-1. Filtering rows according to WHERE
-2. Sorting results according to ORDER BY
-3. Displaying requested columns or expressions.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER BY`. It is possible to write a query as a single line, but for readability, we recommend to put each clause on its own line.
 
@@ -95,11 +89,10 @@ ON publishers.id = journals.PublisherId;
 
 To see the introduction and explanation of JOINS, please click to [Episode 6](06-joins-aliases.md).
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Queries often have the structure: SELECT data FROM table WHERE certain criteria are present.
-- Comments can make our queries easier to read and understand.
+> [!TIP] Keypoints
+> - Queries often have the structure: SELECT data FROM table WHERE certain criteria are present.
+> - Comments can make our queries easier to read and understand.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

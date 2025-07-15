@@ -3,17 +3,14 @@ title: Database design
 weight: 8
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Use Entity Relationship Diagrams to visualise and structure your data.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!primary] Objectives
+> - Use Entity Relationship Diagrams to visualise and structure your data.
 
-:::::::::::::::::::::::::::::::::::::::: questions
+> [!secondary] Questions
+> - What is database design?
 
-- What is database design?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Spreadsheets
 
@@ -21,27 +18,25 @@ In libraries, spreadsheets are often created to keep lists of a variety of thing
 
 Spreadsheets can make data gathering easier but they can also lead to messy data. Over time, if you gather enough data in spreadsheets, you will likely end up with inconsistent data (i.e. misformatted, misspelled data).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Identifying inconsistencies in spreadsheet data
+> [!note]- Challenge
+> > [!accent] 
+> > ## Identifying inconsistencies in spreadsheet data
+> 
+> > In the figure below, can you identify where inconsistencies in the data have been introduced?
+> 
+> > ![](fig/doaj-spreadsheet.png){alt='OpenRefine DOAJ Sample Article Data'}
+> 
+>
+> > [!INFO]- Answers
+> > 1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
+> > 2. The full names of authors are used, in first name to last name order, with middle name abbreviated, separated by pipes;
+> > 3. Date format is MM/DD/YYYY and not the commonly used ISO 8601 format;
+> > 4. The "Subjects" column delimits data by pipes and the data is in a variety of formats such as abbreviations, classifications, and sometimes capitalised.
+> > 
+> > **Can you spot anything else?**
 
-In the figure below, can you identify where inconsistencies in the data have been introduced?
 
-![](fig/doaj-spreadsheet.png){alt='OpenRefine DOAJ Sample Article Data'}
-
-:::::::::::::::  solution
-
-## Answers
-
-1. The data in the "Language" column is formatted in two ways, as an abbreviation and the full word;
-2. The full names of authors are used, in first name to last name order, with middle name abbreviated, separated by pipes;
-3. Date format is MM/DD/YYYY and not the commonly used ISO 8601 format;
-4. The "Subjects" column delimits data by pipes and the data is in a variety of formats such as abbreviations, classifications, and sometimes capitalised.
-  **Can you spot anything else?**
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Designing a relational database for your data can help reduce the places where these errors can be introduced. You can also use SQL queries to find these issues and address them across your entire dataset. Before you can take advantage of all of these tools, you need to design your database.
 
@@ -65,7 +60,7 @@ It is useful to describe on an abstract level the entities we would like to capt
 
 ERDs are helpful tools for visualising and structuring your data more efficiently. They allow you to map relationships between concepts and ultimately construct a relational database. The following is an ERD of the database used in this lesson:
 
-![](https://user-images.githubusercontent.com/30397506/115917162-6cc7ef00-a43b-11eb-97af-16fe50caa6a6.png){alt='Articles Database'}
+![](fig/er-diagram.png){alt='Articles Database'}
 
 *Or you can view the [dbdiagram.io interactive version of the ERD](https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530).*
 
@@ -98,33 +93,30 @@ In the example ERD above, creating a separate table for publishers and linking t
 
 There are a number of normal forms in the normalisation process that can help you reduce redundancy in database tables. [Study Tonight](https://www.studytonight.com/dbms/database-normalization.php) features tutorials where you can learn more about them.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Identifying remaining inconsistencies in the ERD
 
-Are there other tables and relationships you can create to further normalise the data and avoid inconsistencies?
+> [!note]- Challenge
+> > [!accent] 
+> >  ## Identifying remaining inconsistencies in the ERD
+> >  Are there other tables and relationships you can create to further normalise the data and avoid inconsistencies?
+> > 
+> > For this exercise, you can either use pencil/pen and paper to draw new tables and relationships or use [dbdiagram.io](https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530) to modify the ERD above.
+>
+> > [!INFO]- Solution
+> > 1. An 'authors' table can be created with a many-to-many relationship with the 'articles' table and an [associative entity](https://en.wikipedia.org/wiki/Associative_entity) or bridge table between them.
+> > 2. A 'subjects' table can be created with a many-to-many relationship with the 'articles' table and a bridge table between them.
+> > 
+> > **Can you spot anything else?**
 
-For this exercise, you can either use pencil/pen and paper to draw new tables and relationships or use [dbdiagram.io](https://dbdiagram.io/d/5cc32b0cf7c5bb70c72fc530) to modify the ERD above.
-
-:::::::::::::::  solution
-
-## Answers
-
-1. An 'authors' table can be created with a many-to-many relationship with the 'articles' table and an [associative entity](https://en.wikipedia.org/wiki/Associative_entity) or bridge table between them.
-2. A 'subjects' table can be created with a many-to-many relationship with the 'articles' table and a bridge table between them.
-  **Can you spot anything else?**
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
+ 
 Additional database design tutorials to consult from Lucidchart:
 
 - [Database Structure and Design Tutorial](https://www.lucidchart.com/pages/database-diagram/database-design)
 - [What is an Entity Relationship Diagram](https://www.lucidchart.com/pages/er-diagrams)
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Database design is helpful for creating more efficient databases.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+
+> [!TIP] Keypoints
+> - Database design is helpful for creating more efficient databases.
+

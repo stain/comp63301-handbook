@@ -3,19 +3,16 @@ title: Aggregating and calculating values
 weight: 5
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Use SQL functions like `AVG` in combination with clauses like `Group By` to aggregate values and return results for reports.
-- Make calculations on fields using SQL.
+> [!primary] Objectives
+> - Use SQL functions like `AVG` in combination with clauses like `Group By` to aggregate values and return results for reports.
+> - Make calculations on fields using SQL.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+> [!secondary] Questions
+> - How can we aggregate values in SQL for reports?
+> - Can SQL be used to make calculations?
 
-- How can we aggregate values in SQL for reports?
-- Can SQL be used to make calculations?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Aggregation
 
@@ -40,26 +37,20 @@ GROUP BY ISSNs
 ORDER BY AVG(Citation_Count) DESC;
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+> [!note]- Challenge
+> > [!accent] 
+> > Write a query using an aggregate function that returns the number of article titles per ISSNs, sorted by title count in descending order. Which ISSN has the most titles?  (Hint to choosing which aggregate function to use - it is one of the common aggregate functions `MAX, MIN, AVG, COUNT, SUM`.)
+>
+> > [!INFO]- Solution
+> >  ```sql
+> > SELECT ISSNs, COUNT(Title)
+> > FROM articles
+> > GROUP BY ISSNs
+> > ORDER BY COUNT(Title) DESC;
+> > ```
 
-## Challenge
 
-Write a query using an aggregate function that returns the number of article titles per ISSNs, sorted by title count in descending order. Which ISSN has the most titles?  (Hint to choosing which aggregate function to use - it is one of the common aggregate functions `MAX, MIN, AVG, COUNT, SUM`.)
 
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT ISSNs, COUNT(Title)
-FROM articles
-GROUP BY ISSNs
-ORDER BY COUNT(Title) DESC;
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## The `HAVING` keyword
 
@@ -78,27 +69,18 @@ The `HAVING` keyword works exactly like the `WHERE` keyword, but uses aggregate 
 
 Note that `HAVING` comes *after* `GROUP BY`. One way to think about this is: the data are retrieved (`SELECT`), can be filtered (`WHERE`), then joined in groups (`GROUP BY`); finally, we only select some of these groups (`HAVING`).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Challenge
-
-Write a query that returns, from the `articles` table, the average `Citation_Count` for each journal ISSN
-but only for the journals with 5 or more citations on average.
-
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT ISSNs, AVG(Citation_Count)
-FROM articles
-GROUP BY ISSNs
-HAVING AVG(Citation_Count) >= 5;
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!note]- Challenge
+> > [!accent] 
+> > Write a query that returns, from the `articles` table, the average `Citation_Count` for each journal ISSN but only for the journals with 5 or more citations on average.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > SELECT ISSNs, AVG(Citation_Count)
+> > FROM articles
+> > GROUP BY ISSNs
+> > HAVING AVG(Citation_Count) >= 5;
+> > ```
+ 
 
 ## Calculations
 
@@ -117,11 +99,10 @@ We can use any arithmetic operators (like `+`, `-`, `*`, `/`, square root `SQRT`
 
 If you would like to learn more about calculated values, the Software Carpentry Databases and SQL lesson includes a useful episode on [Calculating New Values](https://swcarpentry.github.io/sql-novice-survey/04-calc).
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- SQL can be used for reporting purposes.
-- Queries can do arithmetic operations on field values.
+> [!TIP] Keypoints
+> - SQL can be used for reporting purposes.
+> - Queries can do arithmetic operations on field values.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

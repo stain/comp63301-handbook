@@ -3,17 +3,14 @@ title: "Bonus: Good Style"
 weight: 12
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the foundation for making clean, readable SQL queries.
+> [!primary] Objectives
+> - Understand the foundation for making clean, readable SQL queries.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!secondary] Questions
+> - What is good SQL Style, and how can I abide by SQL conventions?
 
-:::::::::::::::::::::::::::::::::::::::: questions
 
-- What is good SQL Style, and how can I abide by SQL conventions?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## An Introduction to good style
 
@@ -50,10 +47,8 @@ ON publishers.id = journals.PublisherId;
 
 In some programs (such as MySQL), there will be tools that can automatically "beautify" your code for better readability.
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- There are many ways to write an SQL queries, but some look better than others.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!TIP] Keypoints
+> - There are many ways to write an SQL queries, but some look better than others.
 
 

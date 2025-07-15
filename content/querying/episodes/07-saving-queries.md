@@ -3,18 +3,14 @@ title: Saving queries
 weight: 7
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Learn how to save repeated queries as 'Views' and how to drop them.
+> [!primary] Objectives
+> - Learn how to save repeated queries as 'Views' and how to drop them.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!secondary] Questions
+> - How can I save a query for future use?
+> - How can I remove a saved query?
 
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- How can I save a query for future use?
-- How can I remove a saved query?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Saving queries for future use
 
@@ -53,36 +49,26 @@ icon at the bottom of the Execute SQL tab and then clicking **Save as view**.
 Whatever method you use to create a view, it will appear in the list of views
 under the Database Structure tab.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge
 
-Write a `CREATE VIEW` query that `JOINS` the `articles` table with the
-`journals` table on `ISSNs` and returns the `COUNT` of article records
-grouped by the `Journal_Title` in `DESC` order.
+> [!note]- Challenge
+> > [!accent] 
+> > Write a `CREATE VIEW` query that `JOINS` the `articles` table with the `journals` table on `ISSNs` and returns the `COUNT` of article records grouped by the `Journal_Title` in `DESC` order.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > CREATE VIEW journal_counts AS
+> > SELECT journals.Journal_Title, COUNT(*)
+> > FROM articles
+> > JOIN journals
+> > ON articles.ISSNs = journals.ISSNs
+> > GROUP BY Journal_Title
+> > ORDER BY COUNT(*) DESC
+> > ```
 
-:::::::::::::::  solution
 
-## Solution
+> [!TIP] Keypoints
+> - Saving queries as 'Views' allows you to save time and avoid repeating the same operation more than once.
 
-```sql
-CREATE VIEW journal_counts AS
-SELECT journals.Journal_Title, COUNT(*)
-FROM articles
-JOIN journals
-ON articles.ISSNs = journals.ISSNs
-GROUP BY Journal_Title
-ORDER BY COUNT(*) DESC
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: keypoints
-
-- Saving queries as 'Views' allows you to save time and avoid repeating the same operation more than once.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

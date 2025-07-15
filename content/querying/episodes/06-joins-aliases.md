@@ -3,19 +3,16 @@ title: Joins and aliases
 weight: 6
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand how to link tables together via joins.
-- Understand when it is valuable to use aliases or shorthand.
+> [!primary] Objectives
+> - Understand how to link tables together via joins.
+> - Understand when it is valuable to use aliases or shorthand.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!secondary] Questions
+> - How do I join two tables if they share a common point of information?
+> - How can I use aliases to improve my queries?
 
-:::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I join two tables if they share a common point of information?
-- How can I use aliases to improve my queries?
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Joins
 
@@ -35,7 +32,7 @@ ON articles.ISSNs = journals.ISSNs;
 
 We can represent `a LEFT` join using the following diagram.
 
-![](fig/left-join-articles-journals_40.png){alt='Join Diagram for Example'}
+![Join Diagram for Example](fig/left-join-articles-journals_40.png)
 
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are telling DB Browser that we want to combine `articles` with `journals` and that the common column is `ISSNs`.
 
@@ -73,27 +70,20 @@ GROUP BY articles.ISSNs;
 
 The `ROUND` function allows us to round the `Author_Count` number returned by the `AVG` function by 2 decimal places.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge
+> [!note]- Challenge
+> > [!accent] 
+> > Write a query that `JOINS` the `articles` and `journals` tables and that returns the `Journal_Title`, total number of articles published and average number of citations for every journal ISSN.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > SELECT journals.Journal_Title, COUNT(*), AVG(articles.Citation_Count)
+> > FROM articles
+> > JOIN journals
+> > ON articles.ISSNs = journals.ISSNs
+> > GROUP BY articles.ISSNs;
+> > ```
 
-Write a query that `JOINS` the `articles` and `journals` tables and that returns the `Journal_Title`, total number of articles published and average number of citations for every journal ISSN.
-
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT journals.Journal_Title, COUNT(*), AVG(articles.Citation_Count)
-FROM articles
-JOIN journals
-ON articles.ISSNs = journals.ISSNs
-GROUP BY articles.ISSNs;
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 You can also join multiple tables. For example:
 
@@ -106,33 +96,27 @@ JOIN publishers
 ON publishers.id = journals.PublisherId;
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge
+> [!note]- Challenge
+> > [!accent] 
+> > Write a query that returns the `Journal_Title`, `Publisher` name, and number of articles published, ordered by number of articles in descending order.
+>
+> > [!INFO]- Solution
+> > ```sql
+> > SELECT journals.Journal_Title, publishers.Publisher, COUNT(*)
+> > FROM articles
+> > JOIN journals
+> > ON articles.ISSNs = journals.ISSNs
+> > JOIN publishers
+> > ON publishers.id = journals.PublisherId
+> > GROUP BY Journal_Title
+> > ORDER BY COUNT(*) DESC;
+> > ```
 
-Write a query that returns the `Journal_Title`, `Publisher` name, and number of
-articles published, ordered by number of articles in descending order.
 
-:::::::::::::::  solution
-
-## Solution
-
-```sql
-SELECT journals.Journal_Title, publishers.Publisher, COUNT(*)
-FROM articles
-JOIN journals
-ON articles.ISSNs = journals.ISSNs
-JOIN publishers
-ON publishers.id = journals.PublisherId
-GROUP BY Journal_Title
-ORDER BY COUNT(*) DESC;
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 There are different types of joins which you can learn more about at [SQL Joins Explained](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/).
+
 
 ## Aliases
 
@@ -167,11 +151,11 @@ FROM articles a;
 
 But using `AS` is much clearer so it is good style to include it.
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Joining two tables in SQL is an good way to analyse datasets, especially when both datasets provide partial answers to questions you want to ask.
-- Creating aliases allows us to spend less time typing, and more time querying!
 
-::::::::::::::::::::::::::::::::::::::::::::::::::
+> [!TIP] Keypoints
+> - Joining two tables in SQL is an good way to analyse datasets, especially when both datasets provide partial answers to questions you want to ask.
+> - Creating aliases allows us to spend less time typing, and more time querying!
+
 
 
