@@ -1,8 +1,8 @@
-+++
-title = "Introduction to SQL"
-type = "chapter"
-weight = 7
-+++
+---
+title: "Introduction to SQL"
+type: "chapter"
+weight: 7
+---
 
 
 This tutorial is based on the [Library Carpentry SQL tutorial](https://librarycarpentry.github.io/lc-sql/), licensed under [CC-BY 4.0](https://librarycarpentry.github.io/lc-sql/LICENSE.html).

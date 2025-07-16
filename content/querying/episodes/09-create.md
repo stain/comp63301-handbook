@@ -20,13 +20,9 @@ once queries are understood.
 If we want to create and modify data,
 we need to know two other sets of commands.
 
-The first pair are [`CREATE TABLE`][https://www.sqlite.org/lang_createtable.html] and [`DROP TABLE`][https://www.sqlite.org/lang_droptable.html].
-While they are written as two words,
-they are actually single commands.
-The first one creates a new table;
-its arguments are the names and types of the table's columns.
-For example,
-the following statement creates the table `journals`:
+The first pair are [`CREATE TABLE`](https://www.sqlite.org/lang_createtable.html) and [`DROP TABLE`](https://www.sqlite.org/lang_droptable.html).
+While they are written as two words, they are actually single commands. The first one creates a new table; its arguments are the names and types of the table's columns.
+For example, the following statement creates the table `journals`:
 
 ```sql
 CREATE TABLE journals(id text, ISSN-L text, ISSNs text, PublisherId text, Journal_Title text);
@@ -38,14 +34,15 @@ We can get rid of one of our tables using:
 DROP TABLE journals;
 ```
 
-Be very careful when doing this:
-if you drop the wrong table, hope that the person maintaining the database has a backup,
-but it's better not to have to rely on it.
+> [!WARNING]
+> Be very careful when using `DROP TABLE`:
+> if you remove the wrong table (deleting all its rows), you must hope that the person maintaining the database has a backup,
+> but it's better not to have to rely on that!
 
 We talked about data types earlier [in Introduction to SQL: SQL Data Type Quick Reference](01-introduction.md#sql-data-type-quick-reference).
 
 When we create a table,
-we can specify several kinds of constraints on its columns.
+we can specify several kinds of **constraints** on its columns.
 For example, a better definition for the `journals` table would be:
 
 ```sql
@@ -121,14 +118,21 @@ WHERE Journal_Title = 'Animals';
 But now the article `Early Onset of Laying and Bumblefoot Favor Keel Bone Fractures` from the table `articles`
 has no matching journal anymore.
 That's never supposed to happen:
-Our queries assume there will be a row `ISSNs` in the table 'journals'
-matching every row `ISSNs`in the table `articles`.
+Our queries assume there will be a row `ISSNs` in the table _journals_
+matching every row `ISSNs`in the table `articles`, yet we did not include an equivalent
+`FOREIGN KEY` constraint above.
 
+> [!tip] Constraints can be constraining!
+> It may be an explicit database design decision to permit foreign keys without an equivalent constraint. 
+> For instance, if importing articles to _articles_ table is done independent of looking up ISSNs, such a 
+> constraint would not allow the article to be inserted before the ISSNs is detailed in the _journals_ table.
+> The current "open world" design, however, would permit an incomplete foreign key, 
+> and a later query for recent articles without a matching _journal_ entry can be used to top-up the table from he ISSN registry.
 
 
 > [!note]- Challenge
-> > [!accent] 
-> > Write an SQL statement to add the journal "New Journal of Physics" (ISSNs \& ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table `journals`. You need to add the publisher "IOP" to the table `publishers` as well.
+> > [!accent] Inserting
+> > Write an SQL statement to add the journal "New Journal of Physics" (ISSNs \& ISSNs: 1367-2630; publisher: "Institute of Physics (IOP)") to the table `journals`. You need to add the publisher "IOP" to the table `publishers` first, to satisfy the `PublisherId` foreign key constraint from _journals_ to _publishers_.
 >
 > > [!INFO]- Solution
 > > ```sql
@@ -139,11 +143,10 @@ matching every row `ISSNs`in the table `articles`.
 > > ```
 
 
-## Backing Up with SQL
 
 
 > [!note]- Challenge
-> > [!accent] 
+> > [!accent]  Backing Up with SQL
 > > SQLite has several administrative commands that aren't part of the
 > SQL standard.  One of them is `.dump`, which prints the SQL commands
 > needed to re-create the database.  Another is `.read`, which reads a
@@ -151,7 +154,7 @@ matching every row `ISSNs`in the table `articles`.
 > yours thinks that storing dump files (which are text) in version
 > control is a good way to track and manage changes to the database.
 > What are the pros and cons of this approach?  
-> (Hint: records aren't stored in any particular order.)
+> (**Hint**: records aren't stored in any particular order.)
 >
 > > [!INFO]- Solution
 > > ### Advantages
@@ -167,10 +170,10 @@ matching every row `ISSNs`in the table `articles`.
 
 > [!TIP] Keypoints 
 
-> - Use CREATE and DROP to create and delete tables.
-> - Use INSERT to add data.
-> - Use UPDATE to modify existing data.
-> - Use DELETE to remove data.
+> - Use `CREATE` and `DROP` to create and delete tables.
+> - Use `INSERT` to add data.
+> - Use `UPDATE` to modify existing data.
+> - Use `DELETE` to remove data.
 > - It is simpler and safer to modify data when every record has a unique primary key.
 > - Do not create dangling references by deleting records that other records refer to.
 

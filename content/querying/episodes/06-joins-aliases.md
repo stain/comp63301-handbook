@@ -32,7 +32,7 @@ ON articles.ISSNs = journals.ISSNs;
 
 We can represent `a LEFT` join using the following diagram.
 
-![Join Diagram for Example](fig/left-join-articles-journals_40.png)
+![Join Diagram for Example](../fig/left-join-articles-journals_40.png)
 
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are telling DB Browser that we want to combine `articles` with `journals` and that the common column is `ISSNs`.
 
@@ -44,7 +44,9 @@ USING (ISSNs);
 ```
 
 This figure shows the relations between the tables and helps to visualise joining or linking the tables in the database:
-![](fig/articles-erd-v02.png){alt='Articles Database'}
+
+![Articles Database](../fig/articles-erd-v02.png)
+
 We will cover [relational database design](08-database-design.md) in the next episode. In addition to visual above, *[SQL Join Types Explained Visually](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)* provides visual/animated examples to help convey to learners what is happening in SQL `JOIN`s.
 
 When joining tables, you can specify the columns you want by using `table.colname` instead of selecting all the columns using `*`. For example:
