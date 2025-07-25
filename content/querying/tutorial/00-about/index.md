@@ -1,13 +1,19 @@
-+++
-title = "Tutorial: SQL"
-weight = 3
-+++
+---
+title: About this tutorial
+weight: -1
+
+resources:
+- src: sql_tutorial.ipynb
+  title: Jupyter Notebook of this tutorial
+- src: sql_tutorial.py
+  title: Skeleton Python code of this tutorial 
+---
 
 This tutorial will teach you the basics of SQL for querying relational databases.
     
 
 <!-- attachments -->
-{{% resources style="primary" expanded="false" /%}}
+{{% resources style="primary" expanded="true" /%}}
 
 # Tutorial
 
@@ -24,11 +30,10 @@ You can run this Jupyter notebook in [Google Colab](https://colab.research.googl
 
 ### Attribution
 
-Jordan Perdersen (Ed.), Kristin Lee (Ed.), Christopher Erdmann (Ed.), Lise Doucette (Ed.), Elaine Wong (Ed.), Janice Chan (Ed.), James Baker, Fernando Rios, Tim Dennis, Belinda Weaver, … orobecca. (2019, July). **LibraryCarpentry/lc-sql: Library Carpentry: Introduction to SQL, June 2019** (Version v2019.06.1). _Zenodo_. http://doi.org/10.5281/zenodo.3266102
+Jesse Lambertson, Christopher Erdmann, Kristin Lee, Julika Mimkes, Lise Doucette, Jordan Pedersen, Jacqueline Frisina, Jesse Lambertson, Sarah Lynn Fisher, Elizabeth McAulay, Siobhan Dunlop, Ian van der Linde, Jens Nieschulze, Jessica Simpson, RonHLEb, & Scott Carl Peterson (2023):  
+**LibraryCarpentry/lc-sql: Library Carpentry: Introduction to SQL 2023-05** (release 2023.05).  
+_Zenodo_. <https://doi.org/10.5281/zenodo.7886952> 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266102.svg)](https://doi.org/10.5281/zenodo.3266102)
-
-#### Modifications
 
 Extracts modified to Jupyter notebook use by Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>.
 
